@@ -1,0 +1,94 @@
+PLACEMENT DATASET SUMMARY
+============================================================
+
+Number of rows: 50000
+Number of columns: 31
+Total missing values: 19976
+Duplicate rows: 0
+
+COLUMN NAMES
+------------------------------------------------------------
+StudentID
+Gender
+City
+CollegeTier
+Stream
+Specialisation
+Hostel
+HistoryOfBacklogs
+SGPA_Sem1
+SGPA_Sem2
+SGPA_Sem3
+SGPA_Sem4
+SGPA_Sem5
+SGPA_Sem6
+SGPA_Sem7
+SGPA_Sem8
+CGPA
+AttendancePercent
+Internships
+Projects
+Workshops
+Certifications
+Publications
+AptitudeTestScore
+SoftSkillsRating
+CodingTestScore
+MockInterviewScore
+ExtraCurricular
+CGPA_Tier
+PlacementStatus
+IsAnomaly
+
+
+MISSING VALUES
+------------------------------------------------------------
+StudentID                0
+Gender                   0
+City                     0
+CollegeTier              0
+Stream                   0
+Specialisation           0
+Hostel                   0
+HistoryOfBacklogs        0
+SGPA_Sem1                0
+SGPA_Sem2                0
+SGPA_Sem3                0
+SGPA_Sem4                0
+SGPA_Sem5                0
+SGPA_Sem6                0
+SGPA_Sem7                0
+SGPA_Sem8                0
+CGPA                     0
+AttendancePercent        0
+Internships              0
+Projects                 0
+Workshops             4488
+Certifications           0
+Publications             0
+AptitudeTestScore     4029
+SoftSkillsRating      3526
+CodingTestScore       2976
+MockInterviewScore    4957
+ExtraCurricular          0
+CGPA_Tier                0
+PlacementStatus          0
+IsAnomaly                0
+
+PLACEMENT STATUS COUNTS
+------------------------------------------------------------
+PlacementStatus
+0    17144
+1    32856
+
+NUMERICAL SUMMARY
+------------------------------------------------------------
+          StudentID     SGPA_Sem1     SGPA_Sem2     SGPA_Sem3     SGPA_Sem4     SGPA_Sem5     SGPA_Sem6     SGPA_Sem7     SGPA_Sem8          CGPA  AttendancePercent   Internships      Projects     Workshops  Certifications  Publications  AptitudeTestScore  SoftSkillsRating  CodingTestScore  MockInterviewScore  ExtraCurricular  PlacementStatus     IsAnomaly
+count  50000.000000  50000.000000  50000.000000  50000.000000  50000.000000  50000.000000  50000.000000  50000.000000  50000.000000  50000.000000       50000.000000  50000.000000  50000.000000  45512.000000    50000.000000  50000.000000       45971.000000      46474.000000     47024.000000         45043.00000     50000.000000     50000.000000  50000.000000
+mean   25000.500000      7.210583      7.222243      7.235398      7.247290      7.258639      7.274511      7.282720      7.293704      7.246154          76.709863      1.127740      2.109520      1.804469        1.931420      0.735460          68.859261          3.154211        57.411273            55.40853         0.533000         0.657120      0.035000
+std    14433.901067      1.517846      1.532008      1.551632      1.570629      1.587829      1.603261      1.621605      1.638112      1.615686          12.474386      0.813631      1.207607      1.036193        1.175391      0.717167          15.365230          0.981333        20.979679            17.52218         0.498915         0.474677      0.183782
+min        1.000000      4.000000      4.000000      4.000000      4.000000      4.000000      4.000000      4.000000      4.000000      4.000000          50.000000      0.000000      0.000000      0.000000        0.000000      0.000000          30.000000          1.000000         0.000000            15.90000         0.000000         0.000000      0.000000
+25%    12500.750000      6.090000      6.090000      6.080000      6.070000      6.070000      6.080000      6.060000      6.060000      6.040000          67.600000      1.000000      1.000000      1.000000        1.000000      0.000000          58.500000          2.400000        45.900000            44.20000         0.000000         0.000000      0.000000
+50%    25000.500000      7.190000      7.210000      7.220000      7.240000      7.260000      7.280000      7.300000      7.310000      7.250000          77.200000      1.000000      2.000000      2.000000        2.000000      1.000000          69.900000          3.200000        57.700000            54.70000         1.000000         1.000000      0.000000
+75%    37500.250000      8.340000      8.360000      8.400000      8.430000      8.460000      8.500000      8.520000      8.560000      8.480000          85.900000      2.000000      3.000000      3.000000        3.000000      1.000000          79.700000          3.900000        73.300000            69.20000         1.000000         1.000000      0.000000
+max    50000.000000     10.000000     10.000000     10.000000     10.000000     10.000000     10.000000     10.000000     10.000000     10.000000         100.000000      3.000000      5.000000      4.000000        5.000000      3.000000         100.000000          5.000000       100.000000           100.00000         1.000000         1.000000      1.000000
