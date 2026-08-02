@@ -1,2 +1,4 @@
-# Ignore the specific Project Titles PDF
+# Ignore Project folder and heavy archives
+Project/
+*.zip
 Project Titles using ML & DL Algorithms.pdf
