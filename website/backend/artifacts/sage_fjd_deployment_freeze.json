@@ -1,0 +1,16 @@
+{
+  "created_utc": "2026-08-21T15:26:26.353714+00:00",
+  "experiment": "SAGE-FJD",
+  "architecture_frozen": true,
+  "threshold_frozen": true,
+  "threshold_file": "/kaggle/working/proposed_sage_fjd/final_configs/sage_fjd_locked_test_threshold.json",
+  "threshold_file_sha256": "b22a49845e6637c92e1095d5ddeeb50342e07240099fbe78b816238521eb6288",
+  "locked_test_threshold": 0.7386570124651071,
+  "validation_labels_opened": true,
+  "test_labels_opened": true,
+  "test_evaluated": true,
+  "next_allowed_action": "One-time untouched test evaluation in Run 5",
+  "test_metrics_file": "/kaggle/working/proposed_sage_fjd/final_configs/sage_fjd_one_time_test_metrics.csv",
+  "test_metrics_sha256": "d93314cfee912c3125e7b0691265f27d10cccde42150071c34c4580d3e5335d1",
+  "post_test_tuning_allowed": false
+}

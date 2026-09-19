@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAGE-FJD — Fraudulent Job Detection</title>
+<meta name="description" content="Section-Aware Group-Isolated Evidence Fusion for Fraudulent Job Detection. Four independent model branches, one reliability-weighted verdict.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="mast-left">
+    <span class="wordmark">SAGE&#8209;FJD</span>
+    <span class="mast-sub">Fraudulent Job Detection</span>
+  </div>
+  <nav class="mast-nav">
+    <a href="#analyser">Analyser</a>
+    <a href="#evidence">Performance</a>
+  </nav>
+  <div class="mast-right">
+    <span class="led" id="statusLed" data-state="boot"></span>
+    <span class="mast-status" id="statusText">initialising</span>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Section-Aware Group-Isolated Evidence Fusion</p>
+      <h1>Four independent models. <em>One accountable verdict.</em></h1>
+      <p class="lede">
+        SAGE&#8209;FJD reads a job advert through four separate lenses &mdash; its wording, its
+        structure, its meaning, and the posting campaign it belongs to. Each is calibrated
+        and weighted by how reliable it has proven to be, then fused into a single score
+        measured against a threshold that was frozen before the test data was ever opened.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#analyser">Analyse a posting</a>
+        <a class="btn btn-ghost" href="#evidence">See the evidence</a>
+      </div>
+    </div>
+
+    <aside class="stat-card">
+      <div class="stat-head">Locked decision threshold</div>
+      <div class="stat-value mono" id="heroThreshold">0.7387</div>
+      <p class="stat-note">
+        Selected on validation as the maximum-F1 point subject to precision &ge; 0.90,
+        then frozen. The test split was evaluated exactly once against it.
+      </p>
+      <div class="stat-metrics">
+        <div><span class="mono big" id="heroPrec">93.1<i>%</i></span><label>Test precision</label></div>
+        <div><span class="mono big" id="heroRec">42.2<i>%</i></span><label>Test recall</label></div>
+        <div><span class="mono big" id="heroMcc">0.616</span><label>Test MCC</label></div>
+      </div>
+      <div class="stat-foot mono">17,880 postings &middot; 4.84% fraudulent &middot; zero campaign leakage</div>
+    </aside>
+  </div>
+</section>
+
+<!-- ANALYSER -->
+<section class="analyser" id="analyser">
+  <div class="section-head">
+    <h2><span class="num">01</span>Analyser</h2>
+    <p>Paste a posting, or load a real case from the untouched test split.</p>
+  </div>
+
+  <div class="samples" id="samples"><span class="samples-label">Load case</span></div>
+
+  <div class="workbench">
+    <form class="input-panel" id="form" autocomplete="off">
+      <div class="panel-tab">The posting</div>
+
+      <label class="field">
+        <span class="field-label">Job title</span>
+        <input type="text" id="f-title" placeholder="e.g. Data Entry Clerk, Immediate Start">
+      </label>
+
+      <div class="field-row">
+        <label class="field"><span class="field-label">Location</span>
+          <input type="text" id="f-location" placeholder="US, NY, New York"></label>
+        <label class="field"><span class="field-label">Salary range</span>
+          <input type="text" id="f-salary_range" placeholder="30000-45000"></label>
+      </div>
+
+      <label class="field"><span class="field-label">Company profile</span>
+        <textarea id="f-company_profile" rows="3" placeholder="Who the employer claims to be&hellip;"></textarea></label>
+
+      <label class="field"><span class="field-label">Description <i>&mdash; primary evidence</i></span>
+        <textarea id="f-description" rows="8" placeholder="The body of the advert&hellip;"></textarea></label>
+
+      <label class="field"><span class="field-label">Requirements</span>
+        <textarea id="f-requirements" rows="3"></textarea></label>
+
+      <label class="field"><span class="field-label">Benefits</span>
+        <textarea id="f-benefits" rows="2"></textarea></label>
+
+      <div class="field-row">
+        <label class="field"><span class="field-label">Employment type</span>
+          <input type="text" id="f-employment_type" placeholder="Full-time"></label>
+        <label class="field"><span class="field-label">Industry</span>
+          <input type="text" id="f-industry" placeholder="Marketing and Advertising"></label>
+      </div>
+
+      <div class="field-row">
+        <label class="field"><span class="field-label">Required experience</span>
+          <input type="text" id="f-required_experience"></label>
+        <label class="field"><span class="field-label">Function</span>
+          <input type="text" id="f-function"></label>
+      </div>
+
+      <fieldset class="switches">
+        <legend class="field-label">Structural flags</legend>
+        <label class="switch"><input type="checkbox" id="f-has_company_logo"><span></span>Company logo</label>
+        <label class="switch"><input type="checkbox" id="f-has_questions"><span></span>Screening questions</label>
+        <label class="switch"><input type="checkbox" id="f-telecommuting"><span></span>Telecommuting</label>
+      </fieldset>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary" id="runBtn">
+          <span class="btn-label">Analyse posting</span>
+          <span class="btn-spin" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="btn btn-ghost" id="clearBtn">Clear</button>
+      </div>
+      <p class="form-hint" id="formHint">Four models run locally &middot; the first call warms the encoder</p>
+    </form>
+
+    <div class="output-panel" id="output">
+      <div class="panel-tab">The result</div>
+
+      <div class="verdict-empty" id="verdictEmpty">
+        <div class="empty-mark" aria-hidden="true">
+          <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1">
+            <rect x="26" y="18" width="68" height="84" rx="2"/>
+            <path d="M40 42h40M40 58h40M40 74h24" stroke-dasharray="2 6"/>
+          </svg>
+        </div>
+        <p>No posting analysed yet</p>
+        <span>Load a case or paste your own</span>
+      </div>
+
+      <div class="verdict-live" id="verdictLive" hidden>
+        <div class="gauge">
+          <div class="gauge-head">
+            <span>Fused fraud probability</span>
+            <span>threshold <b id="gThreshold">0.7387</b></span>
+          </div>
+          <div class="gauge-track">
+            <div class="gauge-fill" id="gaugeFill"></div>
+            <div class="gauge-threshold" id="gaugeThresholdMark"></div>
+            <div class="gauge-needle" id="gaugeNeedle"><span class="mono" id="gaugeValue">0.000</span></div>
+          </div>
+          <div class="gauge-scale mono"><span>0.0</span><span>0.25</span><span>0.5</span><span>0.75</span><span>1.0</span></div>
+        </div>
+
+        <div class="verdict" id="verdict">
+          <div class="verdict-stamp" id="verdictStamp">
+            <span class="verdict-word" id="verdictWord">&mdash;</span>
+            <span class="verdict-sub" id="verdictSub"></span>
+          </div>
+          <p class="verdict-explain" id="verdictExplain"></p>
+        </div>
+
+        <div class="witnesses">
+          <div class="witness-head">
+            <span>Branch evidence</span>
+            <span>calibrated &middot; weight</span>
+          </div>
+          <ul class="witness-list" id="witnessList"></ul>
+        </div>
+
+        <div class="fusion-breakdown">
+          <div class="fb-row">
+            <span>Reliability-weighted consensus</span>
+            <b class="mono" id="fbReliability">&mdash;</b>
+            <span class="fb-w mono">&times;0.30</span>
+          </div>
+          <div class="fb-row">
+            <span>Stacked meta-model</span>
+            <b class="mono" id="fbMeta">&mdash;</b>
+            <span class="fb-w mono">&times;0.70</span>
+          </div>
+          <div class="fb-row fb-total">
+            <span>Fused probability</span>
+            <b class="mono" id="fbTotal">&mdash;</b>
+            <span class="fb-w mono">=</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="error-box" id="errorBox" hidden></div>
+    </div>
+  </div>
+
+  <div class="caveat">
+    <div class="caveat-mark">!</div>
+    <div>
+      <h3>What a &ldquo;no fraud signal&rdquo; result does not mean</h3>
+      <p>
+        The threshold is deliberately tuned for precision. When SAGE&#8209;FJD flags a posting it is
+        right about <b>93%</b> of the time, but it catches only <b>42%</b> of the fraud in the
+        untouched test split. A clear result is weak evidence of legitimacy, not proof.
+        Use this to prioritise review, never to approve.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- EVIDENCE -->
+<section class="evidence" id="evidence">
+  <div class="section-head">
+    <h2><span class="num">02</span>Performance</h2>
+    <p>Every figure below comes from a single, one-time evaluation on a test split that was never opened during development.</p>
+  </div>
+
+  <div class="metric-wall" id="metricWall"></div>
+
+  <div class="two-col">
+    <div class="split-strip">
+      <h3 class="sub">How the data was split</h3>
+      <div class="split-bar">
+        <span class="sb sb-train" style="flex:12525"><b class="mono">12,525</b><label>train</label></span>
+        <span class="sb sb-val" style="flex:2675"><b class="mono">2,675</b><label>validation</label></span>
+        <span class="sb sb-test" style="flex:2680"><b class="mono">2,680</b><label>test</label></span>
+      </div>
+      <p class="split-note">
+        Splits are cut by <b>campaign group</b>, not by row. Near-duplicate postings from the same
+        fraud campaign are forced into the same split, so zero campaign groups cross the boundary.
+        Without this, a model can score highly by memorising one campaign and meeting its twin in test.
+      </p>
+    </div>
+
+    <div class="confusion">
+      <h3 class="sub">Test outcomes <span class="muted mono">n = 2,680</span></h3>
+      <div class="cm-grid">
+        <div class="cm cm-tn"><b class="mono">2,548</b><label>True negative</label></div>
+        <div class="cm cm-fp"><b class="mono">4</b><label>False positive</label></div>
+        <div class="cm cm-fn"><b class="mono">74</b><label>False negative</label></div>
+        <div class="cm cm-tp"><b class="mono">54</b><label>True positive</label></div>
+      </div>
+      <p class="cm-note">Four false alarms across 2,552 genuine postings &mdash; but 74 fraudulent adverts slipped through.</p>
+    </div>
+  </div>
+
+  <div class="arch" id="arch"></div>
+
+  <div id="charts" class="charts"></div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot-grid">
+    <div>
+      <span class="wordmark">SAGE&#8209;FJD</span>
+      <p>Section-Aware Group-Isolated Evidence Fusion<br>for Fraudulent Job Detection</p>
+    </div>
+  </div>
+  <p class="foot-fine">Research prototype. Screening aid only &mdash; not a hiring or legal decision system. It acts as a second opinion, never the final word.</p>
+</footer>
+
+<script src="/assets/app.js"></script>
+<script src="/assets/charts.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "created_utc": "2026-08-21T16:59:29.715876+00:00",
+  "experiment": "SAGE-FJD",
+  "saved_model": "Complete reliability-aware multimodal fusion pipeline",
+  "important_note": "SAGE-FJD is an ensemble. All four branch models, calibration/fusion artifacts, campaign reference data, and the locked threshold are required.",
+  "locked_threshold": 0.7386570124651071,
+  "threshold_source": "Run 4 locked validation",
+  "untouched_test_metrics": {
+    "Accuracy": 0.9708955223880597,
+    "Precision": 0.9310344827586207,
+    "Recall": 0.421875,
+    "F1": 0.5806451612903226,
+    "Specificity": 0.9984326018808778,
+    "Balanced_Accuracy": 0.7101538009404389,
+    "PR_AUC": 0.6488705114016479,
+    "ROC_AUC": 0.8885096248040752,
+    "MCC": 0.6160021448346304
+  },
+  "post_test_tuning_allowed": false,
+  "core_artifact_count": 8
+}

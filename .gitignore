@@ -1,4 +1,27 @@
-# Ignore Project folder and heavy archives
+# Ignore Python & Node environment files
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+node_modules/
+.DS_Store
+
+# Ignore ultra-large archive files (>100MB) due to GitHub file size limits
+emscad_complete_baselines_1_to_7_checkpoint.zip
+fake_job_baseline_complete_research_package.zip
+fake_job_detection_proposed_complete_reproducibility_package.zip
+
+# Ignore research paper files, drafts, and submission packages (per project guidelines)
+SAGE_FJD_Research_Paper_Submission_Package/
+SAGE_FJD_Research_Paper_Submission_Package.zip
+Leakage_Aware_Multi_View_Fake_Job_Detection_Final-Research-Paper.pdf
+Leakage_Aware_Multi_View_Fake_Job_Detection_Final.docx
+Lokesh_research_paper.pdf
+*Research_Paper*
+*research_paper*
+
+# Ignore temporary and legacy unsegregated working directories
 Project/
-*.zip
-Project Titles using ML & DL Algorithms.pdf
+New folder/
+_work/

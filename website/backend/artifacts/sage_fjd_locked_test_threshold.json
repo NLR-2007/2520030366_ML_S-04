@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-08-21T15:26:26.350494+00:00",
+  "experiment": "SAGE-FJD",
+  "run": 4,
+  "selection_split": "Locked Validation",
+  "threshold_policy": "Maximum validation F1 with precision >= 0.90",
+  "minimum_precision_guardrail": 0.9,
+  "locked_test_threshold": 0.7386570124651071,
+  "validation_rows": 2675,
+  "validation_fraudulent": 129,
+  "selected_validation_metrics": {
+    "Accuracy": 0.9869158878504672,
+    "Precision": 0.9795918367346939,
+    "Recall": 0.7441860465116279,
+    "F1": 0.8458149779735683,
+    "Specificity": 0.9992144540455616,
+    "Balanced_Accuracy": 0.8717002502785948,
+    "PR_AUC": 0.8593987487787348,
+    "ROC_AUC": 0.9747772764086544,
+    "MCC": 0.847767291962127
+  },
+  "fusion_prediction_sha256": "887679420213599793338a7e321300a0ba05e82ec5bdd4a2d425b62b920ab88a",
+  "test_rows_loaded": 0,
+  "test_labels_loaded": false,
+  "test_evaluated": false
+}

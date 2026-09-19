@@ -1,0 +1,18 @@
+{
+  "created_utc": "2026-08-21T15:30:06.161661+00:00",
+  "experiment": "SAGE-FJD",
+  "run": 5,
+  "evaluation": "One-time untouched leakage-safe test",
+  "test_rows": 2680,
+  "test_fraudulent": 128,
+  "locked_threshold": 0.7386570124651071,
+  "threshold_file_sha256": "b22a49845e6637c92e1095d5ddeeb50342e07240099fbe78b816238521eb6288",
+  "threshold_tuned_on_test": false,
+  "models_refit_on_test": false,
+  "test_predictions_sha256": "a828999e727bbe4ce4772983259263d2f71f369855b6d40087305802bf13e825",
+  "test_metrics_sha256": "d93314cfee912c3125e7b0691265f27d10cccde42150071c34c4580d3e5335d1",
+  "elapsed_seconds": 76.8814170580008,
+  "test_labels_loaded": true,
+  "test_evaluated": true,
+  "post_test_tuning_allowed": false
+}
