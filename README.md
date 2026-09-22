@@ -19,10 +19,10 @@ To maintain a clean and modular architecture, project artifacts are segregated i
 
 ```
 ├── 📄 README.md                      # Comprehensive Project Documentation & Graph Showcases
-├── 📁 assets/graphs/                 # High-Resolution Experimental Visualizations & Graphs
-├── 📁 eda_and_reports/               # Exploratory Data Analysis Notebooks & PDF Reports
-├── 📁 training_zips/                 # Sub-100MB Model Checkpoints, Source Bundles & Weights
-├── 📁 website/                       # Real-Time Production Web Application (Frontend + Backend)
+├── 📁 Project/assets/graphs/                 # High-Resolution Experimental Visualizations & Graphs
+├── 📁 Project/eda_and_reports/               # Exploratory Data Analysis Notebooks & PDF Reports
+├── 📁 Project/training_zips/                 # Sub-100MB Model Checkpoints, Source Bundles & Weights
+├── 📁 Project/website/                       # Real-Time Production Web Application (Frontend + Backend)
 ├── 📁 Practical/                     # Machine Learning Practical Experiments & Lab Notebooks
 └── 📁 Skill/                         # Applied Skill Development Notebooks
 ```
@@ -41,7 +41,7 @@ Below is an in-depth visual showcase of the experimental evaluations, workflow a
 
 | **Figure 13: SAGE-FJD Multi-View Model Architecture** | **Figure 14: End-to-End Experimental Workflow** |
 | :---: | :---: |
-| ![Model Architecture](assets/graphs/Figure_13_model_architecture.png) | ![Experimental Workflow](assets/graphs/Figure_14_experimental_workflow.png) |
+| ![Model Architecture](Project/assets/graphs/Figure_13_model_architecture.png) | ![Experimental Workflow](Project/assets/graphs/Figure_14_experimental_workflow.png) |
 | *Multi-Branch architecture fusing structured metadata, text embeddings, and dense neural layers.* | *Standardized data split, feature engineering, baseline training, and evaluation lifecycle.* |
 
 </div>
@@ -54,21 +54,21 @@ Below is an in-depth visual showcase of the experimental evaluations, workflow a
 The EMSCAD dataset exhibits a severe class imbalance, where fraudulent postings represent only **4.84%** (866 instances) of the total 17,880 listings.
 
 <p align="center">
-  <img src="assets/graphs/Figure_01_class_distribution.png" alt="Class Distribution" width="75%"/>
+  <img src="Project/assets/graphs/Figure_01_class_distribution.png" alt="Class Distribution" width="75%"/>
 </p>
 
 #### **Figure 02: Missing Value Audit Across Attributes**
 Analysis of missing data revealed critical signals: missing company profiles, logos, and salary ranges strongly correlate with fraudulent activity.
 
 <p align="center">
-  <img src="assets/graphs/Figure_02_missing_values.png" alt="Missing Values" width="85%"/>
+  <img src="Project/assets/graphs/Figure_02_missing_values.png" alt="Missing Values" width="85%"/>
 </p>
 
 #### **Figure 03: Binary Metadata Fraud Rates**
 Postings lacking binary metadata attributes (e.g., absence of company logo, absence of screening questions) demonstrate significantly elevated fraud probability.
 
 <p align="center">
-  <img src="assets/graphs/Figure_03_binary_metadata_fraud_rates.png" alt="Binary Metadata Fraud Rates" width="85%"/>
+  <img src="Project/assets/graphs/Figure_03_binary_metadata_fraud_rates.png" alt="Binary Metadata Fraud Rates" width="85%"/>
 </p>
 
 ---
@@ -79,7 +79,7 @@ Postings lacking binary metadata attributes (e.g., absence of company logo, abse
 
 | **Figure 04: Data Split Protocol Audit** | **Figure 05: Matched Validation Comparison** |
 | :---: | :---: |
-| ![Split Audit](assets/graphs/Figure_04_split_protocol_audit.png) | ![Validation Comparison](assets/graphs/Figure_05_matched_validation_comparison.png) |
+| ![Split Audit](Project/assets/graphs/Figure_04_split_protocol_audit.png) | ![Validation Comparison](Project/assets/graphs/Figure_05_matched_validation_comparison.png) |
 | *Strict stratifications ensuring zero data contamination between training, validation, and untouched test splits.* | *Cross-validation performance against out-of-fold validation sets across baseline models.* |
 
 </div>
@@ -92,7 +92,7 @@ Postings lacking binary metadata attributes (e.g., absence of company logo, abse
 Comparative analysis of true positives, false positives, false negatives, and true negatives across primary algorithmic branches.
 
 <p align="center">
-  <img src="assets/graphs/Figure_07_confusion_matrices.png" alt="Confusion Matrices" width="85%"/>
+  <img src="Project/assets/graphs/Figure_07_confusion_matrices.png" alt="Confusion Matrices" width="85%"/>
 </p>
 
 #### **Figure 08 & 09: ROC and Precision-Recall Curves**
@@ -102,7 +102,7 @@ Evaluating discrimination capability across decision thresholds. The proposed en
 
 | **Figure 08: Receiver Operating Characteristic (ROC)** | **Figure 09: Precision-Recall (PR) Curves** |
 | :---: | :---: |
-| ![ROC Curves](assets/graphs/Figure_08_roc_curves.png) | ![PR Curves](assets/graphs/Figure_09_precision_recall_curves.png) |
+| ![ROC Curves](Project/assets/graphs/Figure_08_roc_curves.png) | ![PR Curves](Project/assets/graphs/Figure_09_precision_recall_curves.png) |
 
 </div>
 
@@ -114,13 +114,13 @@ Evaluating discrimination capability across decision thresholds. The proposed en
 
 | **Figure 10: Test Branch Performance** | **Figure 11: False Negative Risk Bands** |
 | :---: | :---: |
-| ![Test Branch Performance](assets/graphs/Figure_10_test_branch_performance.png) | ![False Negative Risk](assets/graphs/Figure_11_false_negative_analysis.png) |
+| ![Test Branch Performance](Project/assets/graphs/Figure_10_test_branch_performance.png) | ![False Negative Risk](Project/assets/graphs/Figure_11_false_negative_analysis.png) |
 
 </div>
 
 #### **Figure 12: Error Signal Comparison Across Features**
 <p align="center">
-  <img src="assets/graphs/Figure_12_error_signal_comparison.png" alt="Error Signal Comparison" width="85%"/>
+  <img src="Project/assets/graphs/Figure_12_error_signal_comparison.png" alt="Error Signal Comparison" width="85%"/>
 </p>
 
 ---
@@ -139,7 +139,7 @@ Evaluating discrimination capability across decision thresholds. The proposed en
 
 ## 🌐 Web Application & Real-Time Deployment
 
-The repository includes a production-ready Web Application located in the [`website/`](./website) folder, built with a Python backend and modern interactive frontend.
+The repository includes a production-ready Web Application located in the [`website/`](./Project/website) folder, built with a Python backend and modern interactive frontend.
 
 ### 🚀 Running the Web App locally
 
@@ -165,11 +165,11 @@ Open `website/frontend/index.html` in your browser or run via PowerShell:
 
 ## 📦 Downloadable Assets & Checkpoints
 
-Due to GitHub's **100 MB single file limit**, heavy model checkpoints (>100MB) are tracked outside Git. Sub-100MB model weights and packages are available in [`training_zips/`](./training_zips):
+Due to GitHub's **100 MB single file limit**, heavy model checkpoints (>100MB) are tracked outside Git. Sub-100MB model weights and packages are available in [`training_zips/`](./Project/training_zips):
 
-- 📦 [`best_fake_job_fraud_detection_model.zip`](./training_zips/best_fake_job_fraud_detection_model.zip) — Trained Best Model Deployment Package.
-- 📦 [`SAGE_FJD_Best_Model_Deployment.zip`](./training_zips/SAGE_FJD_Best_Model_Deployment.zip) — Multi-view inference pipeline weights.
-- 📦 [`fake_job_postings.csv.zip`](./training_zips/fake_job_postings.csv.zip) — Compressed raw dataset.
+- 📦 [`best_fake_job_fraud_detection_model.zip`](./Project/training_zips/best_fake_job_fraud_detection_model.zip) — Trained Best Model Deployment Package.
+- 📦 [`SAGE_FJD_Best_Model_Deployment.zip`](./Project/training_zips/SAGE_FJD_Best_Model_Deployment.zip) — Multi-view inference pipeline weights.
+- 📦 [`fake_job_postings.csv.zip`](./Project/training_zips/fake_job_postings.csv.zip) — Compressed raw dataset.
 
 ---
 
